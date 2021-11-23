@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "npm build & node .",
+    "start": "npm run build & node .",
     "dev": "tsc -w & nodemon ."
   },
   "author": "Geordi Dosher",
