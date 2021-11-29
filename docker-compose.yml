@@ -1,12 +1,18 @@
-version: '3.4'
+version: '3.7'
 
 services:
-  nvest:
-    image: nvest
+  nvest-server:
     build:
-      context: nvest-server
-      dockerfile: ./Dockerfile
-    environment:
-      NODE_ENV: production
+      context: ./nvest-server
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./nvest-server/src:/home/node/app/src
+      - ./nvest-server/nodemon.json:/home/node/app/nodemon.json
+    container_name: nvest-server
+    expose:
+      - '5000'
     ports:
-      - 5000:5000
+      - '5000:5000'
+      - '9229:9229'
+    command: npm run dev

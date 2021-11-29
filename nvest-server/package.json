@@ -4,10 +4,10 @@
   "description": "A personal investing app",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "npm run build & node .",
-    "dev": "tsc -w & nodemon ."
-  },
+    "start": "NODE_PATH=./build node build/index.js",
+    "build": "tsc -p .",
+    "dev": "nodemon src/index.ts"
+  },   
   "author": "Geordi Dosher",
   "license": "ISC",
   "dependencies": {
@@ -27,6 +27,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.4.1",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
   }
 }
