@@ -7,7 +7,7 @@
     "start": "NODE_PATH=./build node build/index.js",
     "build": "tsc -p .",
     "dev": "nodemon src/index.ts"
-  },   
+  },
   "author": "Geordi Dosher",
   "license": "ISC",
   "dependencies": {
