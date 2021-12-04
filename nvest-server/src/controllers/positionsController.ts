@@ -1,7 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
+import { _userService } from '../services/user.service';
 
-export class PositionsController {
-    getAllPositions(req: Request, res: Response, next: NextFunction) {
-        res.status(200).send('onetwothree');
+class PositionsController {
+    async getAllPositions(req: Request, res: Response, next: NextFunction) {
+        const user = await _userService.getUser(req.body.userId);
+
+        res.status(200).send(user); // sending user for testing purposes only
     }
 }
+
+export const _positionsController = new PositionsController();
