@@ -1,5 +1,5 @@
 import express from 'express';
-import { AuthService } from './services/TDA/authService';
+import { defineRoutes } from './routes/routes';
 
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
@@ -8,13 +8,6 @@ if (process.env.NODE_ENV !== 'production') {
 const app = express();
 const port = 5000;
 
-app.get('/', async (_, res) => {
-    try {
-        const result = await new AuthService().saveAccessToken();
-        res.status(200).send(result);
-    } catch (ex) {
-        res.status(500).send(ex);
-    }
-});
+defineRoutes(app);
 
 app.listen(port, () => console.log(`Running on port ${port}`));
