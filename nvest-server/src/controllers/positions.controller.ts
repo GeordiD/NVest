@@ -5,7 +5,7 @@ class PositionsController {
     async getAllPositions(req: Request, res: Response, next: NextFunction) {
         const user = await _userService.getUser(req.body.userId);
 
-        res.status(200).send(user); // sending user for testing purposes only
+        res.status(200).send(user);
     }
 }
 

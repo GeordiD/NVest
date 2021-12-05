@@ -1,8 +1,9 @@
 import express from 'express';
 import { defineRoutes } from './routes/routes';
+import dotenv from 'dotenv';
 
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
+    dotenv.config();
 }
 
 const app = express();

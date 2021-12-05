@@ -1,5 +1,5 @@
 import express from 'express';
-import { _positionsController } from '../controllers/positionsController';
+import { _positionsController } from '../controllers/positions.controller';
 
 export const positionsRouter = express.Router();
 

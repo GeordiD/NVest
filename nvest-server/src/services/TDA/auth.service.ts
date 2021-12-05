@@ -4,7 +4,7 @@ import { config } from '../config';
 
 export class AuthService {
     async saveAccessToken(): Promise<string> {
-        var result = await axios.post(
+        const result = await axios.post(
             `https://api.tdameritrade.com/v1/oauth2/token`,
             qs.stringify({
                 grant_type: 'authorization_code',
@@ -29,7 +29,7 @@ export class AuthService {
     }
 
     async refreshToken(refreshToken: string) {
-        var result = await axios.post(
+        const result = await axios.post(
             `https://api.tdameritrade.com/v1/oauth2/token`,
             qs.stringify({
                 grant_type: 'refresh_token',
